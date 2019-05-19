@@ -1,3 +1,39 @@
-<p>
-  results works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="close()" name="close">
+        <ion-icon name="close-circle-outline" slot="icon-only">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Results</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="shows">
+    <ion-item *ngFor="let show of shows">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="show.image" [alt]="show.name"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ show.name }}</h2>
+        <p [innerHTML]="show.summary"></p>
+      </ion-label>
+    </ion-item>
+    <ion-card *ngFor="let show of shows">
+      <ion-thumbnail>
+        <img [src]="show.image" [alt]="show.name">
+      </ion-thumbnail>
+      <ion-card-header class="ios hydrated">
+        <ion-card-subtitle class="ios hydrated" role="heading" aria-level="3">Destination</ion-card-subtitle>
+        <ion-card-title class="ios hydrated" role="heading" aria-level="2">{{ show.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ios card-content-ios hydrated" [innerHTML]="show.summary">
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+
+

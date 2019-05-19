@@ -14,7 +14,8 @@ export class SearchPage {
 
   async onSearch() {
       const modal = await this.modalController.create({
-          component: ResultsComponent
+          component: ResultsComponent,
+          componentProps: { term: this.query }
       });
       return await modal.present();
   }
