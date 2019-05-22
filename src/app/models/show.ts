@@ -47,6 +47,5 @@ export class Show {
         _.forOwn(temp, (key, val) => {
             this.episodes.push(temp[val]);
         });
-
     }
 }
