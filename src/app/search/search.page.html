@@ -13,6 +13,7 @@
             Enter your search
           </ion-card-header>
           <ion-card-content padding>
+            <form (ngSubmit)="onSearch()">
             <ion-item>
               <ion-input type="text"
                          required
@@ -20,14 +21,15 @@
                          color="primary"
                          clearInput
                          [(ngModel)]="query"
+                         name="query"
               ></ion-input>
             </ion-item>
 
-            <ion-button color="secondary" padding (click)="onSearch()" size="block">
+            <ion-button color="secondary" padding type="submit" size="block">
               Search
               <ion-icon slot="start" name="search"></ion-icon>
             </ion-button>
-
+            </form>
           </ion-card-content>
         </ion-card>
       </ion-col>
