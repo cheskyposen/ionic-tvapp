@@ -1,5 +1,7 @@
 {
   "name": "ion-tv",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

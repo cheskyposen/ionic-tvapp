@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="danger"
+                  (click)="onClose()">
+        <ion-icon name="close-circle-outline"
+                  slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{showName}} - Season {{episodeList[0].season}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let episode of episodeList">
+      <ion-thumbnail *ngIf="episode.image">
+        <img src="{{episode.image}}">
+      </ion-thumbnail>
+      <ion-label margin>
+        S{{episode.season}}E{{episode.episode}}: {{episode.name}}
+        <p [innerHTML]="episode.summary" ></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
